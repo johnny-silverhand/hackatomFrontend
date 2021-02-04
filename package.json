@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "node-sass": "^5.0.0",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.32.6"
+  },
+  "name": "hackatomFrontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Kalinss/hackatomFrontend.git",
+  "author": "Kalinss <Kalinss16@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel serve pages/*.html --port 1111",
+    "build": "parcel build <your entry file>"
+  }
+}
