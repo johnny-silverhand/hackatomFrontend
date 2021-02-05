@@ -1,0 +1,329 @@
+@import "fonts";
+@import "variables";
+@import "mixins";
+
+html, body{
+  font-size: 16px;
+}
+
+div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: 'Rosatom',"Arial Black";
+  color: $primaryFC;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*{
+  box-sizing: border-box;
+}
+
+.wrapper{
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.header{
+  height: 101px;
+  border-bottom: 1px solid $borderColorFirst;
+
+  &__wrapper{
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__logo{
+    position: relative;
+    width: 240px;
+    height: 100px;
+    & a{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__nav{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+  &__nav-left{
+    height: 100%;
+    display: flex;
+  }
+  &__nav-item{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin: 0 10px;
+    & a{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 0 20px;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: $primaryFC;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease-in-out;
+      &:hover{
+        text-decoration: none;
+        color: $thirdFC;
+      }
+    }
+    &--light{
+      & a{
+        padding-left: 5px;
+        font-weight:300;
+        text-transform: none;
+      }
+    }
+  }
+
+
+}
+
+.avatar{
+  width: 50px;
+  height: 50px;
+  background-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png');
+  background-position: center;
+  border-radius: 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  border: 1px solid $borderColorFirst;
+  & a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+.header__burg{
+  display: none;
+}
+.header__hide{
+  display: flex;
+  margin-left: 100px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  height: 100%;
+}
+.header__nav{
+  align-items: center;
+  & ul{
+    margin-bottom: 0;
+  }
+}
+.header__right{
+  display: flex;
+  align-items: center;
+}
+.header__burg{
+  & span
+  {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #333333;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    opacity 0.55s ease;
+  }
+  & span:first-child
+  {
+    transform-origin: 0% 0%;
+  }
+  & span:nth-last-child(2)
+  {
+    transform-origin: 0% 100%;
+  }
+}
+
+@include mxm(1350){
+  .wrapper{
+    width: 100%;
+  }
+}
+.header__exit{
+  display: none;
+  margin-left: 25px;
+}
+.header__avatar-wrapper{
+  & p{
+    display: none;
+  }
+}
+@include mxm(1000){
+  .header__hide{
+    display: flex;
+    flex-direction: column;
+  }
+  .header__wrapper{
+    background-color: white;
+    position: relative;
+    z-index: 10;
+  }
+  .header__hide{
+    top: -500px;
+    position: absolute;
+    left: 0;
+    margin-left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 1;
+    transition: 0.3s ease-in-out;
+    flex-direction: column;
+    background-color: white;
+    &.active{
+      padding-top: 10px;
+      top: 100px;
+    }
+    height: auto;
+
+    padding-bottom: 10px;
+    border-bottom: 1px solid $borderColorFirst;
+  }
+  .header__right{
+    order: 0;
+    margin-left: 20px;
+  }
+  .header__nav{
+    order: 1;
+  }
+  .header__logo{
+    position: relative;
+    z-index: 11;
+  }
+  .header__burg{
+    position: relative;
+    z-index: 11;
+    padding: 5px;
+    padding-bottom: 1px;
+    border: 1px solid transparent;
+    &.active{
+      border: 1px solid $borderColorFirst;
+      border-radius: 3px;
+      transition: 0.3s ease;
+    }
+
+  }
+  .header__layer{
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+  }
+  .header__nav-left{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__burg{
+    display: block;
+    margin-right: 10px;
+  }
+  .header__wrapper{
+    justify-content: space-between;
+  }
+  .header__nav-item{
+    height: 35px;
+  }
+  .header__nav-right{
+    display: none;
+  }
+  .header__exit{
+    display: block;
+  }
+  .header__avatar-wrapper{
+      display: flex;
+    align-items: center;
+    & p{
+      display: block;
+      margin-bottom: 0;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+  }
+}
+.header{
+  margin-bottom: 50px;
+}
+.content{
+  border: 1px solid $borderColorFirst;
+  border-top: none;
+  border-radius: 5px;
+  min-height: 200px;
+}
+.nav-tabs-custom{
+  & li{
+    &.active{
+      & *{
+        color: $thirdFC !important;
+      }
+
+    }
+  }
+
+  & *{
+    font-weight: bold;
+    color: $primaryFC;
+
+    &:hover{
+      color: $secondaryFC;
+    }
+
+  }
+}
+
