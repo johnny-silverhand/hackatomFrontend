@@ -1,1 +1,0 @@
-{"version":3,"sources":["..\\styles.scss"],"names":[],"mappings":"AAAA,CAAC,CAAA;EACC,gBAAgB,EAAE,GAAG;EACrB,KAAK,EAAE,KAAK,GACb","file":"styles.665d9766.css","sourceRoot":"..\\pages","sourcesContent":["p{\r\n  background-color: red;\r\n  color: green;\r\n}"]}

@@ -12,6 +12,6 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel serve pages/*.html --port 1111",
-    "build": "parcel build <your entry file>"
+    "build": "parcel build pages/*.html --public-url ./"
   }
 }
